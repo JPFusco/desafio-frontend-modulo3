@@ -1,0 +1,62 @@
+@import '../../styles/resets.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.table-line {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #E0E0E0;
+
+    padding: 20px 28px;
+
+    span {
+        display: block;
+        text-align: center;
+        @include lato(normal, 14px, 17px);
+    }
+
+    .data {
+        width: 115px;
+        @include lato(bold, 14px, 17px);
+        text-align: start;
+    }
+
+    .dia-semana {
+        width: 125px;
+    }
+
+    .descricao {
+        width: 250px;
+    }
+
+    .categoria {
+        width: 160px;
+    }
+
+    .valor {
+        width: 140px;
+        @include lato(bold, 14px, 17px);
+        color: #7B61FF;
+    }
+    
+    .buttons {
+        display: flex;
+
+        margin-left: 40px;
+
+        button {
+            all: unset;
+            cursor: pointer;
+        }
+
+        .lapis {
+            margin-right: 20px;
+        }
+
+        .lixeira {
+            position: relative;
+        }
+    }
+}
+

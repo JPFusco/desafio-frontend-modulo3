@@ -1,0 +1,26 @@
+@import '../../styles/resets.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.open-filters-button {
+    all: unset;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    background: #FAFAFA;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    padding: 8px 15px;
+    margin-bottom: 30px;
+
+    img {
+        margin-right: 4px;
+    }
+
+    span {
+        @include lato (bold, 12px, 14px);
+    }
+}

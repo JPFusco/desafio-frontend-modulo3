@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from './componentes/Header';
+import BotaoFiltrar from './componentes/BotaoFiltrar';
+import Filtros from './componentes/Filtros';
+import Table from './componentes/Table';
+import Resumo from './componentes/Resumo';
+import BotaoAddRegistro from './componentes/BotaoAddRegistro';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="call-to-action">
+        <div className="main-elements">
+          <BotaoFiltrar />
+          <Filtros />
+          <Table />
+        </div>
+        <div className="side-menu">
+          <Resumo />
+          <BotaoAddRegistro />
+        </div>
+      </div>
+    </>
   );
 }
 

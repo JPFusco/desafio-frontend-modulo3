@@ -1,0 +1,54 @@
+@import '../../styles/resets.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.container-resume {
+    width: 236px;
+    height: 196px;
+
+    background: #FAFAFA;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #2F2F2F;
+
+    padding: 26px 33px 33px;
+
+    h1 {
+        @include rubik(bold, 18px, 21px);
+
+        margin-bottom: 23px;
+    }
+
+    p {
+        display: flex;
+        justify-content: space-between;
+
+        @include rubik(500, 13px, 15px);
+    }
+
+    .entradas {
+        margin-bottom: 12px;
+
+        span {
+            color: $purple;
+        }
+    }
+
+    .saidas {
+        border-bottom: 1px solid #EAEAEA;
+        padding-bottom: 19px;
+        margin-bottom: 16px;
+
+        span {
+            color: $orange;
+        }
+    }
+
+    .saldo {
+        @include rubik(bold, 14px, 17px);
+
+        span {
+            color: #3A9FF1;
+        }
+    }
+}

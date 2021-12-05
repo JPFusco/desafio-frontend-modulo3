@@ -1,0 +1,27 @@
+@import '../../styles/resets.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.container-header {
+    height: 225px;
+
+    background: linear-gradient(90.23deg, $light-blue 0.02%, $middle-blue 99.63%);
+
+    padding: 40px 100px;
+
+    div {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 45px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            @include rubik(bold, 36px, 43px);
+            color: #FFFFFF;
+        }
+    }
+
+}

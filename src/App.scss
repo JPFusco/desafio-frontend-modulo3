@@ -1,0 +1,25 @@
+@import './styles/resets.scss';
+@import './styles/colors.scss';
+@import './styles/fonts.scss';
+
+.call-to-action {
+  display: flex;
+
+  position: relative;
+  bottom: 106px;
+
+  background: #FFFFFF;
+  border-radius: 60px 60px 0px 0px;
+
+  padding: 55px 105px;
+
+  .main-elements {
+    width: 960px;
+
+    margin-right: 40px;
+  }
+
+  .side-menu {
+    padding-top: 60px;
+  }
+}

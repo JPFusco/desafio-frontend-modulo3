@@ -1,0 +1,46 @@
+@import '../../styles/resets.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.container-chip {
+    cursor: pointer;
+    min-width: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include rubik(normal, 10px, 12px);
+    background: #FAFAFA;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    padding: 4px 10px;
+    margin-bottom: 9px;
+
+    span {
+        margin-left: 13px;
+    }
+}
+
+.icon-filter {
+    cursor: pointer;
+    min-width: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include rubik(normal, 10px, 12px);
+    background: #7B61FF;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #FFFFFF;
+
+    padding: 4px 10px;
+    margin-bottom: 9px;
+
+    span {
+        margin-left: 13px;
+    }
+}

@@ -1,0 +1,116 @@
+@import '../../styles/resets.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.container-filters {
+    height: 215px;
+
+    display: flex;
+
+    background: #FAFAFA;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    padding: 27px 26px 20px 38px;
+    margin-bottom: 50px;
+
+    h1 {
+        @include rubik(500, 12px, 14px);
+        color: #B9B9B9;
+
+        margin-bottom: 20px;
+    }
+
+    .dias, .categorias {
+        height: 130px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        border-right: 1px solid #EAEAEA;
+        padding: 8px 30px 0 0;
+    }
+
+    .dia-da-semana {
+        width: 220px;
+
+        h1 {
+            margin-left: 4px;
+        }
+
+        .container-chip, .icon-filter {
+            margin-right: 12px;
+        }
+    }
+
+    .categoria {
+        width: 220px;
+        margin-left: 40px;
+
+        h1 {
+            margin-left: 4px;
+        }
+
+        .categorias {
+            padding-right: 40px;
+        }
+    }
+
+    .valor {
+        display: flex;
+        flex-direction: column;
+
+        margin-left: 40px;
+
+        label {
+            @include rubik(normal, 9px, 11px);
+            color: #484848;
+
+            margin-bottom: 2px;
+        }
+
+        input {
+            width: 65px;
+            height: 22px;
+
+            background: #FFFFFF;
+            border: 1px solid #7B61FF;
+            box-sizing: border-box;
+            border-radius: 2px;
+
+            margin-bottom: 14px;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-grow: 1;
+
+        button {
+            all: unset;
+            cursor: pointer;
+
+            @include lato(700, 12px, 14px);
+            box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+
+            padding: 8px 11px;
+            margin-bottom: 4px;
+        }
+
+        .btn-clear-filters {
+            background: #FAFAFA;
+            margin-right: 16px;
+        }
+
+        .btn-apply-filters {
+            background: linear-gradient(264.83deg, #3A9FF1 -3.28%, $light-blue 100%);
+            color: #FFFFFF;
+        }
+
+    }
+}
