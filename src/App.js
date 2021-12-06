@@ -9,17 +9,26 @@ import BotaoAddRegistro from './componentes/BotaoAddRegistro';
 import ModalRegistro from './componentes/ModalRegistro';
 
 function App() {
+  const [transacoesOriginais, setTransacoesOriginais] = useState([]);
   const [transacoes, setTransacoes] = useState([]);
   const [atualizar, setAtualizar] = useState(false);
   const [filtrando, setFiltrando] = useState(false);
   const [registrando, setRegistrando] = useState(false);
   const tituloModal = useRef("");
   const dadosModal = useRef({ value: '', category: '', date: '', description: '', type: 'debit', id: '' });
+  const categorias = useRef([]);
 
   const fetchTransactions = async () => {
     const response = await fetch("http://localhost:3333/transactions");
     const data = await response.json();
     setTransacoes(data);
+    setTransacoesOriginais(data);
+    for (const transacao of data) {
+      if (categorias.current.includes(transacao.category)) {
+        continue;
+      }
+      categorias.current.push(transacao.category);
+    }
   }
 
   useEffect(() => {
@@ -28,7 +37,7 @@ function App() {
 
   useEffect(() => {
     fetchTransactions();
-  }, [atualizar])
+  }, [atualizar]);
 
   return (
     <>
@@ -39,12 +48,20 @@ function App() {
             setFiltrando={setFiltrando}
             filtrando={filtrando}
           />
-          {filtrando && <Filtros />}
+          {filtrando &&
+            <Filtros
+              categorias={categorias}
+              setAtualizar={setAtualizar}
+              transacoes={transacoesOriginais}
+              setTransacoes={setTransacoes}
+            />
+          }
           <Table
             titulo={tituloModal}
             setRegistrando={setRegistrando}
             dadosModal={dadosModal}
             transacoes={transacoes}
+            setTransacoes={setTransacoes}
             setAtualizar={setAtualizar}
           />
           {registrando &&

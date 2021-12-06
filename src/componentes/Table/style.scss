@@ -3,6 +3,8 @@
 @import '../../styles/fonts.scss';
 
 .table {
+    width: 964px;
+
     display: flex;
     flex-direction: column;
 
@@ -16,18 +18,28 @@
         padding: 20px 28px;
 
         span {
-            display: inline-block;
-            text-align: center;
+            // display: inline-block;
+            // text-align: center;
+            display: flex;
+            justify-content: center;
             @include lato(bold, 14px, 17px);
+
+            img {
+                width: 8px;
+                margin-left: 4px;
+            }
         }
 
         .data {
+            cursor: pointer;
             width: 115px;
 
-            text-align: start;
+            position: relative;
+            right: 35px;
         }
 
         .dia-semana {
+            cursor: pointer;
             width: 125px;
         }
 
@@ -40,6 +52,7 @@
         }
 
         .valor {
+            cursor: pointer;
             width: 140px;
         }
     }
