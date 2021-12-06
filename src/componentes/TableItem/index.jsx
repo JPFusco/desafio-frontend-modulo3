@@ -4,11 +4,34 @@ import lixeira from '../../assets/lixeira.svg';
 import ModalConfirmarDelete from '../ModalConfirmarDelete';
 import { useState } from 'react';
 
-export default function TableItem({ data, diaSemana, descricao, categoria, valor }) {
+export default function TableItem({
+    data,
+    diaSemana,
+    descricao,
+    categoria,
+    valor,
+    tipo,
+    id,
+    tituloModal,
+    setRegistrando,
+    dadosModal,
+    setAtualizar
+}) {
     const [excluindo, setExcluindo] = useState(false);
 
-    const handleClick = () => {
+    const handleClickLixeira = () => {
         excluindo ? setExcluindo(false) : setExcluindo(true);
+    }
+
+    const handleClickLapis = () => {
+        tituloModal.current = "Editar";
+        dadosModal.current.type = tipo;
+        dadosModal.current.value = valor;
+        dadosModal.current.category = categoria;
+        dadosModal.current.date = data;
+        dadosModal.current.description = descricao;
+        dadosModal.current.id = id;
+        setRegistrando(true);
     }
 
     return (
@@ -17,13 +40,21 @@ export default function TableItem({ data, diaSemana, descricao, categoria, valor
             <span className="dia-semana">{diaSemana}</span>
             <span className="descricao">{descricao}</span>
             <span className="categoria">{categoria}</span>
-            <span className="valor">{valor}</span>
+            <span className={tipo === "credit" ? "valor credit" : "valor debit"}>{valor}</span>
             <div className="buttons">
-                <button className="lapis"><img src={lapis} alt="Editar item" /></button>
-                <button className="lixeira">
-                    <img src={lixeira} alt="Apagar item" onClick={() => handleClick()} />
-                    {excluindo && <ModalConfirmarDelete setExcluindo={setExcluindo} />}
-                </button>
+                <div className="lapis" onClick={handleClickLapis}>
+                    <img src={lapis} alt="Editar item" />
+                </div>
+                <div className="lixeira">
+                    <img src={lixeira} alt="Apagar item" onClick={handleClickLixeira} />
+                    {excluindo &&
+                        <ModalConfirmarDelete
+                            setExcluindo={setExcluindo}
+                            id={id}
+                            setAtualizar={setAtualizar}
+                        />
+                    }
+                </div>
             </div>
         </div>
     );

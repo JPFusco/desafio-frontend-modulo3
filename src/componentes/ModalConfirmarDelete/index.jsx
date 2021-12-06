@@ -1,12 +1,20 @@
 import './style.scss';
 
-export default function ModalConfirmarDelete({ setExcluindo }) {
+export default function ModalConfirmarDelete({ setExcluindo, id, setAtualizar }) {
     const handleClickNao = () => {
         setExcluindo(false);
     }
 
     const handleClickSim = () => {
-        //lógica para excluir o item da lista
+        const deleteItem = async () => {
+            await fetch(`http://localhost:3333/transactions/${id}`, {
+                method: "DELETE"
+            });
+        }
+
+        deleteItem();
+        setExcluindo(false);
+        setAtualizar(Math.random());
     }
 
     return (

@@ -37,7 +37,14 @@
     .valor {
         width: 140px;
         @include lato(bold, 14px, 17px);
-        color: #7B61FF;
+    }
+
+    .debit {
+        color: $orange;
+    }
+
+    .credit {
+        color: $purple;
     }
     
     .buttons {
@@ -47,6 +54,10 @@
 
         button {
             all: unset;
+            cursor: pointer;
+        }
+
+        div {
             cursor: pointer;
         }
 
